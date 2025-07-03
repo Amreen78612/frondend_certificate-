@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 
 function App() {
   const [name, setName] = useState("");
- const apiUrl = import.meta.env.VITE_BACKEND_URL;
+ const apiUrl = process.env.VITE_BACKEND_URL;
+ console.log(apiUrl);
+
   const handleGenerate = async (e) => {
     e.preventDefault();
     if (!name) {
@@ -10,7 +12,7 @@ function App() {
       return;
     }
 
-    const response = await fetch(`${apiUrl}/generate-certificate`, {
+    const response = await fetch(`https://backend-certificate-ygqz.onrender.com/generate-certificate`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name }),
