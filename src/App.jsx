@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 function App() {
   const [name, setName] = useState("");
- const apiUrl = process.env.VITE_BACKEND_URL;
- console.log(apiUrl);
+/*  const apiUrl = process.env.VITE_BACKEND_URL;
+ console.log(apiUrl); */
 
   const handleGenerate = async (e) => {
     e.preventDefault();
